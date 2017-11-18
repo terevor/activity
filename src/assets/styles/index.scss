@@ -1,0 +1,175 @@
+@import './color.scss';
+@import './mixin.scss';
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+    height: 100%;
+    background-color: #191919;
+    overflow: hidden;
+}
+
+label {
+    font-weight: 700;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.no-padding {
+    padding: 0px !important;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+.fr {
+    float: right;
+}
+
+.fl {
+    float: left;
+}
+
+.dp-block {
+    display: block;
+}
+
+.dp-inline-block {
+    display: inline-block;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: all .2s ease
+}
+
+.fade-enter,
+.fade-leave-active {
+    opacity: 0;
+}
+
+.slide-fade-enter-active {
+    transition: all .3s ease;
+}
+
+.slide-fade-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+    transform: translateX(10px);
+    opacity: 0;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.common-toast {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 11000;
+    width: auto;
+    padding: 0 0.5rem;
+    line-height: 2rem;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+
+.common-toast-show {
+    animation: commonToastShow ease 300ms;
+}
+
+.common-toast-hide {
+    animation: commonToastHide ease 500ms;
+}
+
+@keyframes commonToastShow {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 0, 0) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+@keyframes commonToastHide {
+    0% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(0, 0, 0) scale(0);
+    }
+}
+
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+
+::-webkit-scrollbar {
+    width: 1px;
+    height: 1px;
+}
+
+
+/*定义滚动条轨道 内阴影+圆角*/
+
+::-webkit-scrollbar-track {
+    border-radius: 3px;
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, .3);
+}
+
+
+/*定义滑块 内阴影+圆角*/
+
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, .3);
+}
